@@ -1,0 +1,84 @@
+/*
+@author "Marcelo Silveira Hayden"
+*/
+/* GENERAL */
+body {
+    margin: 8px auto;
+    width: 50%;
+    background-color: #e9e9e9;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+a {
+    color: #000;
+}
+a:hover {
+    color: palevioletred;
+}
+h2,
+div.note p,
+ul#usr_list {
+    margin: 0;
+}
+button,
+input[type='button'],
+input[type='submit'] {
+    padding: 4px;
+    border: 1px solid palevioletred;
+    min-width: 80px;
+}
+button:hover,
+input[type='button']:hover,
+input[type='submit']:hover {
+    background-color: palevioletred;
+}
+
+/* PRIMARY */
+ul#usr_list {
+    padding: 0;
+    list-style-type: none;
+}
+
+/* Media card */
+li.media_card {
+    margin: 4px 0;
+    padding: 12px;
+    border-bottom: 1px solid lightgray;
+    font-family: 'Courier New', Courier, monospace;
+}
+li.media_card:hover,
+form {
+    background-color: lightgray;
+}
+.links::before {
+    content: 'Link: ';
+}
+.tags::before {
+    content: 'Tags: ';
+}
+div.note p {
+    display: inline;
+    font-style: italic;
+}
+.note::before {
+    content: 'Note: ';
+}
+.buttons {
+    margin-top: 10px;
+    text-align: right;
+}
+
+/* Form style */
+form {
+    padding: 10px;
+}
+form label {
+    display: inline-block;
+    margin: 10px;
+}
+form input[type='text'] {
+    border: 1px solid gray;
+}
+form input[type='text']:focus {
+    outline: 3px solid palevioletred;
+    border: 1px solid black;
+}
