@@ -82,3 +82,7 @@ form input[type='text']:focus {
     outline: 3px solid palevioletred;
     border: 1px solid black;
 }
+
+form div#warnings {
+    color: red;
+}

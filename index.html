@@ -30,8 +30,9 @@
             </li>
         </ul>
     </main>
-    <form action="addToList()">
+    <form id="add_media_form">
         <h2>Add to your list</h2>
+        <div id="warnings"></div>
         <label for="input_title">
             <span>A title</span>
             <input type="text" name="title" id="input_title">
@@ -44,12 +45,13 @@
             <span>Tags to classify the content</span>
             <input type="text" name="tags" id="input_tags">
         </label>
-        <label for="input_notes">
-            <span>Any notes?</span>
-            <input type="text" name="notes" id="input_notes">
+        <label for="input_note">
+            <span>Any note?</span>
+            <input type="text" name="note" id="input_note">
         </label>
 
-        <input type="submit" value="Add">
+        <input type="submit" value="Add" id="add_btn">
     </form>
+<script src="script.js"></script>
 </body>
 </html>
