@@ -50,12 +50,7 @@ function createListItem(mediaObj) {
     newLi.insertAdjacentElement('afterbegin', newH2);
 
     const divClassesList = ['links', 'tags', 'note', 'buttons'];
+    const elementForDiv  = ['a', 'span', 'p', 'input'];
 
-    for (let i = 0; i < divClassesList.length; i++) {
-        const classValue = divClassesList[i];
-        const newDiv = document.createElement('div');
-        newDiv.classList.add(classValue);
-        newLi.insertAdjacentElement('beforeend', newDiv);
-    }
     document.getElementById('usr_list').insertAdjacentElement('beforeend', newLi);
 }
