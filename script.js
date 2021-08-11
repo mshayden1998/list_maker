@@ -13,11 +13,9 @@ function validateFormValues(form) {
 
     if (form.title.value.length !== 0) {
         warnings.textContent = '';
-        console.log('The form is valid!');
         return true;
     } else {
-        warnings.textContent = 'You need to insert a title to proceed.';
-        console.log('The form is NOT valid!');
+        warnings.textContent = 'You need to insert a title to proceed.\n';
         return false;
     }
 };
@@ -25,32 +23,50 @@ function validateFormValues(form) {
 function createMediaObj(validForm) {
     mediaObj = {
         title: validForm.title.value,
-        link: insertLinkString(),
+        link: validForm.link.value,
         tags: validForm.tags.value,
         note: validForm.note.value
     }
 
     return mediaObj;
-
-    function insertLinkString() {
-        if (validForm.link.value !== 0) {
-            return validForm.link.value;
-        } else {
-            return 'There is no link yet.';
-        }
-    };
 };
 
 function createListItem(mediaObj) {
     const newLi = document.createElement('li');
     newLi.classList.add('media_card');
+    newLi.id = 'recentlyAdded';
 
     const newH2 = document.createElement('h2');
     newH2.textContent = mediaObj.title;
     newLi.insertAdjacentElement('afterbegin', newH2);
 
     const divClassesList = ['links', 'tags', 'note', 'buttons'];
-    const elementForDiv  = ['a', 'span', 'p', 'input'];
+    const elementForDivList  = ['a', 'span', 'p', 'input'];
+    const btnNameList = ['Exclude', 'Edit'];
+
+    // Adds basic DIV elements to the new LI element
+    for (let i = 0; i < divClassesList.length; i++) {
+        const newDiv = document.createElement('div');
+        newDiv.classList.add(divClassesList[i]);
+        newLi.insertAdjacentElement('beforeend', newDiv);
+    }
+
+    const newA = document.createElement('a');
+    newA.setAttribute('href', mediaObj.link);
+    newA.textContent = 'Assistir em ' + mediaObj.link;
+    newLi.children[1].insertAdjacentElement('beforeend', newA);
+
+    const newSpan = document.createElement('span');
+    newSpan.textContent = mediaObj.tags;
+    newLi.children[2].insertAdjacentElement('beforeend', newSpan);
+
+    const newP = document.createElement('p');
+    newP.textContent = mediaObj.note;
+    newLi.children[3].insertAdjacentElement('beforeend', newP);
+
+    const newBtn = document.createElement('button');
+    newBtn.textContent = btnNameList[0];
+    newLi.children[4].insertAdjacentElement('beforeend', newBtn);
 
     document.getElementById('usr_list').insertAdjacentElement('beforeend', newLi);
-}
+};
