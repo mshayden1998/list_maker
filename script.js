@@ -64,9 +64,12 @@ function createListItem(mediaObj) {
     newP.textContent = mediaObj.note;
     newLi.children[3].insertAdjacentElement('beforeend', newP);
 
-    const newBtn = document.createElement('button');
-    newBtn.textContent = btnNameList[0];
-    newLi.children[4].insertAdjacentElement('beforeend', newBtn);
+    // Adds BUTTON elements to  element
+    for (let i = 0; i < btnNameList.length; i++) {
+        const newBtn = document.createElement('button');
+        newBtn.textContent = btnNameList[i];
+        newLi.children[4].insertAdjacentElement('afterbegin', newBtn);
+    }
 
     document.getElementById('usr_list').insertAdjacentElement('beforeend', newLi);
 };
