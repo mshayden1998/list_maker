@@ -34,7 +34,7 @@ function createMediaObj(validForm) {
 function createListItem(mediaObj) {
     const newLi = document.createElement('li');
     newLi.classList.add('media_card');
-    newLi.id = 'recentlyAdded';
+    newLi.id = 'recently_added';
 
     const newH2 = document.createElement('h2');
     newH2.textContent = mediaObj.title;
