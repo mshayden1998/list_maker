@@ -13,6 +13,7 @@ function validateFormValues(form) {
 
     if (form.title.value.length !== 0) {
         warnings.textContent = '';
+
         return true;
     } else {
         warnings.textContent = 'You need to insert a title to proceed.\n';
@@ -23,12 +24,21 @@ function validateFormValues(form) {
 function createMediaObj(validForm) {
     mediaObj = {
         title: validForm.title.value,
-        link: validForm.link.value,
+        link: getALinkOrNot(),
         tags: validForm.tags.value,
         note: validForm.note.value
     }
 
     return mediaObj;
+
+    function getALinkOrNot() {
+        if (validForm.link.value.length !== 0) {
+            const newLink = new URL(validForm.link.value);
+            return newLink;
+        } else {
+            return 'There is no link yet';
+        }
+    }
 };
 
 function createListItem(mediaObj) {
@@ -40,7 +50,7 @@ function createListItem(mediaObj) {
     newH2.textContent = mediaObj.title;
     newLi.insertAdjacentElement('afterbegin', newH2);
 
-    const divClassesList = ['links', 'tags', 'note', 'buttons'];
+    const divClassesList = ['links_ctr', 'tags_ctr', 'note', 'buttons'];
     const elementForDivList  = ['a', 'span', 'p', 'input'];
     const btnNameList = ['Exclude', 'Edit'];
 
@@ -53,7 +63,7 @@ function createListItem(mediaObj) {
 
     const newA = document.createElement('a');
     newA.setAttribute('href', mediaObj.link);
-    newA.textContent = 'Assistir em ' + mediaObj.link;
+    newA.textContent = 'Assistir em ' + mediaObj.link.hostname;
     newLi.children[1].insertAdjacentElement('beforeend', newA);
 
     const newSpan = document.createElement('span');

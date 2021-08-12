@@ -11,6 +11,12 @@ body {
 a {
     color: #000;
 }
+a:visited {
+    color: purple;
+}
+a:active {
+    color: red;
+}
 a:hover {
     color: palevioletred;
 }
@@ -20,7 +26,6 @@ ul#usr_list {
     margin: 0;
 }
 button,
-input[type='button'],
 input[type='submit'] {
     margin-left: 10px;
     padding: 4px;
@@ -28,7 +33,6 @@ input[type='submit'] {
     min-width: 80px;
 }
 button:hover,
-input[type='button']:hover,
 input[type='submit']:hover {
     background-color: palevioletred;
 }
@@ -50,10 +54,10 @@ li.media_card:hover,
 form {
     background-color: lightgray;
 }
-.links::before {
+.links_ctr::before {
     content: 'Link: ';
 }
-.tags::before {
+.tags_ctr::before {
     content: 'Tags: ';
 }
 div.note p {
@@ -64,8 +68,9 @@ div.note p {
     content: 'Note: ';
 }
 .buttons {
+    display: flex;
+    justify-content: flex-end;
     margin-top: 10px;
-    text-align: right;
 }
 
 /* Form style */
@@ -76,10 +81,10 @@ form label {
     display: inline-block;
     margin: 10px;
 }
-form input[type='text'] {
+form input {
     border: 1px solid gray;
 }
-form input[type='text']:focus {
+form input:focus {
     outline: 3px solid palevioletred;
     border: 1px solid black;
 }
