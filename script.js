@@ -53,8 +53,7 @@ function createListItem(mediaObj) {
     newH2.textContent = mediaObj.title;
     newLi.insertAdjacentElement('afterbegin', newH2);
 
-    const divClassesList = ['links_ctr', 'tags_ctr', 'note', 'buttons'];
-    const elementForDivList  = ['a', 'span', 'p', 'input'];
+    const divClassesList = ['links_ctr', 'tags_ctr', 'note_ctr', 'buttons_ctr'];
     const btnNameList = ['Exclude', 'Edit'];
 
     // Adds basic DIV elements to the new LI element
@@ -87,7 +86,7 @@ function createListItem(mediaObj) {
     addElementInsideNewLi(3, newP);
     //newLi.children[3].insertAdjacentElement('beforeend', newP);
 
-    // Adds BUTTON elements to  element
+    // Adds BUTTON elements to the current LI element
     for (let i = 0; i < btnNameList.length; i++) {
         const newBtn = document.createElement('button');
         newBtn.textContent = btnNameList[i];

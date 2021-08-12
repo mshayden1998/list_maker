@@ -4,6 +4,7 @@
 @dictionary
     "ctr" means "container";
     "usr" means "user";
+    "btn" means "button";
     Class selectors without a especified element are for DIV elements
 */
 /* GENERAL */
@@ -26,7 +27,7 @@ a:hover {
     color: palevioletred;
 }
 h2,
-.note p,
+.note_ctr p,
 ul#usr_list {
     margin: 0;
 }
@@ -47,6 +48,15 @@ ul#usr_list {
     list-style-type: none;
 }
 
+button.destructive_btn {
+    border: 1px solid red;
+    background-color: rgb(255, 92, 92);
+}
+button.destructive_btn:hover {
+    background-color: red;
+    color: white;
+}
+
 /* Media card */
 li.media_card {
     margin: 4px 0;
@@ -64,14 +74,14 @@ form {
 .tags_ctr::before {
     content: 'Tags: ';
 }
-.note p {
+.note_ctr p {
     display: inline;
     font-style: italic;
 }
-.note::before {
+.note_ctr::before {
     content: 'Note: ';
 }
-.buttons {
+.buttons_ctr {
     display: flex;
     justify-content: flex-end;
     margin-top: 10px;
