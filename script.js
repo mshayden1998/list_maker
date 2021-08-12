@@ -33,15 +33,18 @@ function createMediaObj(validForm) {
 
     function getALinkOrNot() {
         if (validForm.link.value.length !== 0) {
-            const newLink = new URL(validForm.link.value);
-            return newLink;
+            return new URL(validForm.link.value);
         } else {
-            return 'There is no link yet';
+            return false;
         }
     }
 };
 
 function createListItem(mediaObj) {
+    function addElementInsideNewLi(childrenNumb, elementName) {
+        newLi.children[childrenNumb].insertAdjacentElement('beforeend', elementName);
+    }
+
     const newLi = document.createElement('li');
     newLi.classList.add('media_card');
     newLi.id = 'recently_added';
@@ -61,24 +64,35 @@ function createListItem(mediaObj) {
         newLi.insertAdjacentElement('beforeend', newDiv);
     }
 
-    const newA = document.createElement('a');
-    newA.setAttribute('href', mediaObj.link);
-    newA.textContent = 'Assistir em ' + mediaObj.link.hostname;
-    newLi.children[1].insertAdjacentElement('beforeend', newA);
+    if (mediaObj.link == false) {
+        const newSpan = document.createElement('span');
+        newSpan.textContent = 'There is no link yet';
+        addElementInsideNewLi(1, newSpan)
+        //newLi.children[1].insertAdjacentElement('beforeend', newSpan);
+    } else {
+        const newA = document.createElement('a');
+        newA.setAttribute('href', mediaObj.link);
+        newA.textContent = 'Assistir em ' + mediaObj.link.hostname;
+        addElementInsideNewLi(1, newA);
+        //newLi.children[1].insertAdjacentElement('beforeend', newA);
+    }
 
     const newSpan = document.createElement('span');
     newSpan.textContent = mediaObj.tags;
-    newLi.children[2].insertAdjacentElement('beforeend', newSpan);
+    addElementInsideNewLi(2, newSpan);
+    //newLi.children[2].insertAdjacentElement('beforeend', newSpan);
 
     const newP = document.createElement('p');
     newP.textContent = mediaObj.note;
-    newLi.children[3].insertAdjacentElement('beforeend', newP);
+    addElementInsideNewLi(3, newP);
+    //newLi.children[3].insertAdjacentElement('beforeend', newP);
 
     // Adds BUTTON elements to  element
     for (let i = 0; i < btnNameList.length; i++) {
         const newBtn = document.createElement('button');
         newBtn.textContent = btnNameList[i];
-        newLi.children[4].insertAdjacentElement('afterbegin', newBtn);
+        addElementInsideNewLi(4, newBtn);
+        //newLi.children[4].insertAdjacentElement('afterbegin', newBtn);
     }
 
     document.getElementById('usr_list').insertAdjacentElement('beforeend', newLi);
