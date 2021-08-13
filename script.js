@@ -19,7 +19,7 @@ function validateFormValues(form) {
         warnings.textContent = 'You need to insert a title to proceed.\n';
         return false;
     }
-};
+}
 
 function createMediaObj(validForm) {
     mediaObj = {
@@ -38,7 +38,7 @@ function createMediaObj(validForm) {
             return false;
         }
     }
-};
+}
 
 function createListItem(mediaObj) {
     function addElementInsideNewLi(childrenNumb, elementName) {
@@ -47,14 +47,14 @@ function createListItem(mediaObj) {
 
     const newLi = document.createElement('li');
     newLi.classList.add('media_card');
-    newLi.id = 'recently_added';
+    newLi.id = 'card' + (document.querySelectorAll('.media_card').length + 1);
 
     const newH2 = document.createElement('h2');
     newH2.textContent = mediaObj.title;
     newLi.insertAdjacentElement('afterbegin', newH2);
 
     const divClassesList = ['links_ctr', 'tags_ctr', 'note_ctr', 'buttons_ctr'];
-    const btnNameList = ['Exclude', 'Edit'];
+    const btnNameList = ['Edit', 'Delete'];
 
     // Adds basic DIV elements to the new LI element
     for (let i = 0; i < divClassesList.length; i++) {
@@ -95,4 +95,4 @@ function createListItem(mediaObj) {
     }
 
     document.getElementById('usr_list').insertAdjacentElement('beforeend', newLi);
-};
+}

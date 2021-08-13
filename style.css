@@ -48,15 +48,6 @@ ul#usr_list {
     list-style-type: none;
 }
 
-button.destructive_btn {
-    border: 1px solid red;
-    background-color: rgb(255, 92, 92);
-}
-button.destructive_btn:hover {
-    background-color: red;
-    color: white;
-}
-
 /* Media card */
 li.media_card {
     margin: 4px 0;
