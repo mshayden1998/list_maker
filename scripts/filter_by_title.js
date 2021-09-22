@@ -16,7 +16,6 @@ inputFilter.addEventListener('input', function() {
             } else {
                 listItem.classList.add('invisible');
             }
-
         }
     } else {
         for (let i = 0; i < cards.length; i++) {
@@ -24,4 +23,4 @@ inputFilter.addEventListener('input', function() {
             listItem.classList.remove('invisible');
         }
     }
-})
+});
