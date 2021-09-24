@@ -102,3 +102,7 @@ footer {
     background-color: #E2E2E2;
     padding: 1em;
 }
+
+#filter {
+    margin: 10px 0;
+}
