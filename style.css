@@ -14,16 +14,16 @@ body {
     font-family: 'Arial Narrow', Arial, sans-serif;
 }
 a {
-    color: #000;
+    color: black;
 }
 a:visited {
-    color: purple;
+    color: #800080;
 }
 a:active {
-    color: red;
+    color: #ff0000;
 }
 a:hover {
-    color: palevioletred;
+    color: #d87093;
 }
 h2, .note_ctr p, ul#usr_list {
     margin: 0;
@@ -32,11 +32,11 @@ button, input[type='submit'] {
     min-width: 7em;
     margin-left: 0.8em;
     padding: 0.3em;
-    border: 1px solid palevioletred;
+    border: 1px solid #d87093;
     background-color: white;
 }
 button:hover, input[type='submit']:hover {
-    background-color: palevioletred;
+    background-color: #d87093;
 }
 ul#usr_list {
     padding: 0;
@@ -46,11 +46,11 @@ ul#usr_list {
 /* Media card */
 li.media_card {
     padding: 1em;
-    border: 1px solid lightgray;
+    border: 1px solid #d3d3d3;
     font-family: 'Courier New', Courier, monospace;
 }
 li.media_card:hover {
-    background-color: #E2E2E2;
+    background-color: #e2e2e2;
 }
 .links_ctr::before {
     content: 'Link: ';
@@ -91,24 +91,24 @@ form label span {
 form label:not(:first-of-type) {
     margin-left: 1em;
 }
-form input {
+input {
     height: 26px;
     width: 200px;
     transition: border-color 0.5s;
-    border: 1px solid transparent;
-    box-shadow: inset 0 0 0.3em lightgray;
+    border: 1px solid #d3d3d3;
+    box-shadow: inset 0 0 0.3em #d3d3d3;
 }
-form input:hover {
+input:hover {
     transition: border-color 0.5s;
     border: 1px solid black;
 }
-form input:focus {
-    outline: 0.2em solid palevioletred;
+input:focus {
+    outline: 0.2em solid #d87093;
 }
 
 /* Footer */
 footer {
-    background-color: #E2E2E2;
+    background-color: #e2e2e2;
     padding: 1em;
 }
 
