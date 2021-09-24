@@ -4,18 +4,21 @@
     <meta charset="UTF-8">
     <meta name="author" content="Marcelo Silveira Hayden">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="favicon-list-32px.png" type="image/png">
     <title>List Maker</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <h1>List Maker</h1>
     <main>
-        <h2>User list</h2>
-        <ul id="usr_list">
+        <div id="filter">
             <label for="input_filter">
                 <span>Filter by title</span>
                 <input type="text" id="input_filter">
             </label>
+        </div>
+        <h2>User list</h2>
+        <ul id="usr_list">
             <li id="card1" class="media_card">
                 <h2>Drive</h2>
                 <div class="links_ctr">
@@ -36,17 +39,16 @@
     </main>
     <form id="add_media_form">
         <h2>Add to your list</h2>
-        <div id="warnings"></div>
         <label for="input_title">
             <span>A title</span>
             <input type="text" name="title" id="input_title" required>
         </label>
         <label for="input_link">
-            <span>A link to watch it</span>
+            <span>A link to it</span>
             <input type="url" name="link" id="input_link">
         </label>
         <label for="input_tags">
-            <span>Tags to classify the content</span>
+            <span>Tags</span>
             <input type="text" name="tags" id="input_tags">
         </label>
         <label for="input_note">
@@ -56,12 +58,12 @@
 
         <input type="submit" value="Add" id="add_btn">
     </form>
-<script src="scripts/add_item.js"></script>
-<script src="scripts/remove_item.js"></script>
-<script src="scripts/filter_by_title.js"></script>
+    <footer>
+        <p>Web app being made by Marcelo Silveira Hayden</p>
+        <p>Icons made by <a href="https://www.flaticon.com/authors/bqlqn" title="bqlqn">bqlqn</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a>.</p>
+    </footer>
+    <script type="module" src="scripts/main.js">
+    // The main script is a module so it can import classes
+    </script>
 </body>
-<footer>
-    <p>Web app being made by Marcelo Silveira Hayden</p>
-    <div>Icons made by <a href="https://www.flaticon.com/authors/bqlqn" title="bqlqn">bqlqn</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
-</footer>
 </html>
