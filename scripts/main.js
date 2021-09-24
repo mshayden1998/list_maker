@@ -3,12 +3,12 @@ import { Media } from './Media.js';
 const form = document.forms.add_media_form;
 
 document.querySelector('#add_btn').addEventListener('click', (event) => {
-    event.preventDefault();
+    event.preventDefault(); // TEMPORARY line for development purposes
 
-    if (validateForm()) {
+    if (validateTitle()) {
         const newItem = new Media;
         newItem.title = form.title.value;
-        newItem.link = createLinkOrNoLinkMessage();
+        newItem.link = createLinkOrNoLinkMessage(form.link.value);
         newItem.tags = createTags(form.tags.value);
         newItem.note = form.note.value;
 
@@ -18,7 +18,7 @@ document.querySelector('#add_btn').addEventListener('click', (event) => {
     }
 })
 
-function validateForm() {
+function validateTitle() {
     if (form.title.value.length > 0) {
         return true;
     }
@@ -30,9 +30,12 @@ function createTags(input_value) {
     */
 }
 
-function createLinkOrNoLinkMessage() {
-    if (form.link.value.length > 0) {
-        return form.link.value;
+function createLinkOrNoLinkMessage(input_value) {
+    /*
+    This function will create a link and not just consider the link length. It will be updated.
+    */
+    if (input_value.length > 0) {
+        return input_value;
     } else {
         return 'There is no link yet';
     }
