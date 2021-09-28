@@ -10,6 +10,7 @@ document.querySelector('#add_btn').addEventListener('click', (event) => {
         newItem.title = form.title.value;
         newItem.link = createLinkOrNoLinkMessage(form.link.value);
         newItem.tags = createTags(form.tags.value);
+        newItem.mainTag = newItem.tags[0];
         newItem.note = form.note.value;
 
         console.log(newItem);
@@ -19,24 +20,28 @@ document.querySelector('#add_btn').addEventListener('click', (event) => {
 })
 
 function validateTitle() {
+    /*
+    This simple function will return true if there is a value to be keeped
+    */
     if (form.title.value.length > 0) {
         return true;
     }
 }
 
 function createTags(input_value) {
-    /*
-    This function will get all the ',' from the input value so it will create an array of tags
-    */
+    // It needs to be updated
+    let inputText = input_value;
+    const tagsArray = inputText.split(',');
+    return tagsArray;
 }
 
 function createLinkOrNoLinkMessage(input_value) {
     /*
-    This function will create a link and not just consider the link length. It will be updated.
+    This function will verify if the input value is actually a link so it will be keeped or will return null. It needs to be updated.
     */
     if (input_value.length > 0) {
         return input_value;
     } else {
-        return 'There is no link yet';
+        return null;
     }
 }
