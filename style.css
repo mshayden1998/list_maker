@@ -28,14 +28,16 @@ a:hover {
 h2, .note_ctr p, ul#usr_list {
     margin: 0;
 }
-button, input[type='submit'] {
-    min-width: 7em;
+.btn_pattern {
+    width: 7em;
     margin-left: 0.8em;
     padding: 0.3em;
     border: 1px solid #d87093;
     background-color: white;
+    /* to reset */
+    box-shadow: none;
 }
-button:hover, input[type='submit']:hover {
+.btn_pattern:hover {
     background-color: #d87093;
 }
 ul#usr_list {
@@ -75,12 +77,6 @@ li.media_card:hover {
 form {
     margin: 1em 0;
 }
-form input[type='submit'] { /* just to reset */
-    box-shadow: none;
-    width: auto;
-    margin-top: 1em;
-    margin-left: auto;
-}
 form label {
     display: inline-block;
 }
@@ -88,12 +84,10 @@ form label span {
     display: block;
     margin: 0.3em 0;
 }
-form label:not(:first-of-type) {
-    margin-left: 1em;
-}
 input {
-    height: 26px;
-    width: 200px;
+    height: 2rem;
+    width: 13rem;
+    padding: 0 0.5rem;
     transition: border-color 0.5s;
     border: 1px solid #d3d3d3;
     box-shadow: inset 0 0 0.3em #d3d3d3;
