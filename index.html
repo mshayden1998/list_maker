@@ -31,8 +31,8 @@
                     <p>An excellement movie from 2011</p>
                 </div>
                 <div class="buttons_ctr">
-                    <button>Edit</button>
-                    <button>Delete</button>
+                    <button class="btn_pattern">Edit</button>
+                    <button class="btn_pattern">Delete</button>
                 </div>
             </li>
         </ul>
@@ -41,22 +41,22 @@
         <h2>Add to your list</h2>
         <label for="input_title">
             <span>A title</span>
-            <input type="text" name="title" id="input_title" required>
+            <input type="text" name="title" id="input_title" placeholder="Drive" required>
         </label>
         <label for="input_link">
             <span>A link to it</span>
-            <input type="url" name="link" id="input_link">
+            <input type="url" name="link" id="input_link" placeholder="www.netflix.com/movie/watch...">
         </label>
         <label for="input_tags">
             <span>Tags</span>
-            <input type="text" name="tags" id="input_tags">
+            <input type="text" name="tags" id="input_tags" title="Use commas to separate your tags." placeholder="Movie, drama, ...">
         </label>
         <label for="input_note">
             <span>Any note?</span>
-            <input type="text" name="note" id="input_note">
+            <input type="text" name="note" id="input_note" placeholder="Will be out of Netflix soon.">
         </label>
 
-        <input type="submit" value="Add" id="add_btn">
+        <input class="btn_pattern" type="submit" value="Add" id="add_btn">
     </form>
     <footer>
         <p>Web app being made by Marcelo Silveira Hayden</p>
